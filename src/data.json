@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "name": "Spoon",
+        "image":"spoon.jpeg", 
+        "price": 10.00,
+        "amount": 10
+    },
+    {
+        "id": 2,
+        "name": "Knife",
+        "image":"knife.jpeg", 
+        "price": 14.00,
+        "amount": 30
+    },
+    {
+        "id": 3,
+        "name": "Pot",
+        "image":"pot.jpeg", 
+        "price": 30.00,
+        "amount": 5
+    },
+    {
+        "id": 4,
+        "name": "Chopping Board",
+        "image":"chopping-board.jpeg", 
+        "price": 10.00,
+        "amount": 10
+    },
+    {
+        "id": 5,
+        "name": "Bowl",
+        "image":"bowl.jpeg", 
+        "price": 14.00,
+        "amount": 30
+    },
+    {
+        "id": 6,
+        "name": "Wooden Spoon",
+        "image":"wooden-spoon.jpeg", 
+        "price": 30.00,
+        "amount": 5
+    }
+
+
+
+]
