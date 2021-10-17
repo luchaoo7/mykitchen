@@ -5,16 +5,28 @@ import MyJumbotron from './Jumbotron';
 import MyFooter from './Footer';
 import ItemList from './ItemList';
 import products from '../data.json'
+import ItemDetail from "./ItemDetail";
+import { Route, Switch} from 'react-router-dom';
 
 
 const KitchenContainer = (props) => {
 
     return (
         <>
-        <MyJumbotron />
-        <NavBar/>
-        <ItemList products={products}/>
-        <MyFooter />
+        <Switch>
+            <Route exact path="/">
+                <MyJumbotron />
+                <NavBar/>
+                <ItemList products={products}/>
+                <MyFooter />
+            </Route>
+            <Route exact path="/details">
+                <MyJumbotron />
+                <NavBar/>
+                <ItemDetail />
+                <MyFooter />
+            </Route>
+        </Switch>
         </>
     )
 }

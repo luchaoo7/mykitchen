@@ -3,11 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import KitchenContainer from '../src/components/KitchenContainer';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom';
 //import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <KitchenContainer />
+    <BrowserRouter>
+      <KitchenContainer />
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
