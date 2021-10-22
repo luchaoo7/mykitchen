@@ -10,6 +10,7 @@ import Cart from "./Cart";
 import { Route, Switch} from 'react-router-dom';
 import Success from "./Success";
 import Fail from "./Fail";
+//import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
 
 
 const KitchenContainer = (props) => {
@@ -52,4 +53,5 @@ const KitchenContainer = (props) => {
     )
 }
 
-export default KitchenContainer;
+//export default KitchenContainer;
+export default KitchenContainer

@@ -1,0 +1,20 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-amplify254c405fff224-staging-132714-authRole",
+      "UnauthRoleArn": "arn:aws:iam::820963625322:role/amplify-amplify254c405fff224-staging-132714-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::820963625322:role/amplify-amplify254c405fff224-staging-132714-authRole",
+      "Region": "eu-west-1",
+      "DeploymentBucketName": "amplify-amplify254c405fff224-staging-132714-deployment",
+      "UnauthRoleName": "amplify-amplify254c405fff224-staging-132714-unauthRole",
+      "StackName": "amplify-amplify254c405fff224-staging-132714",
+      "StackId": "arn:aws:cloudformation:eu-west-1:820963625322:stack/amplify-amplify254c405fff224-staging-132714/c572b9c0-333b-11ec-ac94-0abbd233ddd9",
+      "AmplifyAppId": "d1ntixemprioxd"
+    },
+    "categories": {
+      "auth": {
+        "mykitchen3ad7559b": {}
+      }
+    }
+  }
+}
