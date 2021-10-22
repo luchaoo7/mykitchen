@@ -27,9 +27,59 @@ footer {
   background-color: #f2f2f2;
   padding: 25px;
 
-  position: fixed;
+ /* position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
+  text-align: center;*/
+}
+
+/* Success Page */
+.successFailDiv {
   text-align: center;
+  padding: 40px 0;
+  /*background: #EBF0F5;*/
+}
+.successH1 {
+  color: #88B04B;
+  font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
+  font-weight: 900;
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.failH1 {
+  color: #cf2e43;
+  font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
+  font-weight: 900;
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.successFailP {
+  color: #404F5E;
+  font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
+  font-size:20px;
+  margin: 0;
+}
+.checkmark {
+  color: #9ABC66;
+  font-size: 100px;
+  line-height: 200px;
+  margin-left:-15px;
+}
+.cross {
+  color: #cf2e43;
+  font-size: 100px;
+  line-height: 200px;
+  margin-left:-15px;
+}
+
+.successFailCard {
+  background: white;
+  padding: 60px;
+  border-radius: 4px;
+  box-shadow: 0 10px 15px #C8D0D8;
+  display: inline-block;
+  margin: 0 auto;
 }
