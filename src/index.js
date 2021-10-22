@@ -6,11 +6,6 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 //import 'bootstrap/dist/css/bootstrap.min.css';
 
-import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
-import Amplify from 'aws-amplify';
-import config from './aws-exports';
-Amplify.configure(config);
-
 
 ReactDOM.render(
   <React.StrictMode>
