@@ -15,7 +15,6 @@ const Item = (props) => {
                 <img src="https://placehold.it/150x80?text=IMAGE" className="img-responsive" style={style} alt="Image"/>
             </div>
             <div className="panel-footer">Price: ${price} 
-                <button>hello</button>
             </div>
         </div>
         </a>
