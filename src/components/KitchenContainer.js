@@ -11,6 +11,7 @@ import { Route, Switch} from 'react-router-dom';
 import Success from "./Success";
 import Fail from "./Fail";
 
+import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react'
 
 const KitchenContainer = (props) => {
 
@@ -22,29 +23,34 @@ const KitchenContainer = (props) => {
             <Route exact path="/">
                 <MyJumbotron />
                 <NavBar/>
+                <AmplifySignOut />
                 <ItemList products={products}/>
                 <MyFooter />
             </Route>
             <Route exact path="/details">
                 <MyJumbotron />
                 <NavBar/>
+                <AmplifySignOut />
                 <ItemDetail />
                 <MyFooter />
             </Route>
             <Route exact path="/cart">
                 <MyJumbotron />
                 <NavBar/>
+                <AmplifySignOut />
                 <Cart />
                 <MyFooter />
             </Route>
             <Route exact path="/success">
                 <MyJumbotron />
                 <NavBar/>
+                <AmplifySignOut />
                 <Success/>
             </Route>
             <Route exact path="/failed">
                 <MyJumbotron />
                 <NavBar/>
+                <AmplifySignOut />
                 <Fail/>
             </Route>
         </Switch>
@@ -53,4 +59,5 @@ const KitchenContainer = (props) => {
 }
 
 //export default KitchenContainer;
-export default KitchenContainer
+//export default KitchenContainer
+export default withAuthenticator(KitchenContainer)
