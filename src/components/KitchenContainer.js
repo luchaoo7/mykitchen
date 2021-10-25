@@ -4,7 +4,7 @@ import NavBar from './NavBar'
 import MyJumbotron from './Jumbotron';
 import MyFooter from './Footer';
 import ItemList from './ItemList';
-import products from '../data.json'
+//import products from '../data.json'
 import ItemDetail from "./ItemDetail";
 import Cart from "./Cart";
 import { Route, Switch} from 'react-router-dom';
@@ -13,9 +13,24 @@ import Fail from "./Fail";
 
 import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react'
 
+import { API } from 'aws-amplify';
+import { listItems } from '../graphql/queries'
+//import { createItem as createItemMutation, deleteItem as deleteItemMutation } from '../graphql/mutations';
+
 const KitchenContainer = (props) => {
 
-    const [name, setName ] = useState("Messi");
+      const [items, setItems] = useState([]);
+
+    useEffect(() => {
+        fetchItems();
+    }, []);
+
+    async function fetchItems() {
+        const apiData = await API.graphql({ query: listItems });
+        console.log(apiData.data.listItems.items);
+        setItems(apiData.data.listItems.items);
+    }
+
 
     return (
         <>
@@ -24,7 +39,7 @@ const KitchenContainer = (props) => {
                 <MyJumbotron />
                 <NavBar/>
                 <AmplifySignOut />
-                <ItemList products={products}/>
+                <ItemList products={items}/>
                 <MyFooter />
             </Route>
             <Route exact path="/details">
