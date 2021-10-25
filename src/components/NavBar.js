@@ -21,7 +21,6 @@ const NavBar = () => {
         <ul className="nav navbar-nav">
           <li className="active"><a href="#">Home</a></li>
           <li><a href="/">Products</a></li>
-          <li><a href="#">Deals</a></li>
           <li><a href="#">Contact</a></li>
         </ul>
         <ul className="nav navbar-nav navbar-right">
