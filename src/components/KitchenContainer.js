@@ -4,7 +4,7 @@ import NavBar from './NavBar'
 import MyJumbotron from './Jumbotron';
 import MyFooter from './Footer';
 import ItemList from './ItemList';
-import products from '../data.json'
+//import products from '../data.json'
 import ItemDetail from "./ItemDetail";
 import Cart from "./Cart";
 import { Route, Switch} from 'react-router-dom';
@@ -19,7 +19,7 @@ import { listItems } from '../graphql/queries'
 
 const KitchenContainer = (props) => {
 
-      const [items, setItems] = useState([]);
+    const [items, setItems] = useState([]);
 
     useEffect(() => {
         fetchItems();
