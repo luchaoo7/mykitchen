@@ -11,6 +11,7 @@
         "name": "Knife",
         "image":"knife.jpeg", 
         "price": 14.00,
+        "description": "Gold knife",
         "amount": 30
     },
     {
@@ -18,6 +19,7 @@
         "name": "Pot",
         "image":"pot.jpeg", 
         "price": 30.00,
+        "description": "Gold Pot",
         "amount": 5
     },
     {
@@ -25,6 +27,7 @@
         "name": "Chopping Board",
         "image":"chopping-board.jpeg", 
         "price": 10.00,
+        "description": "Gold Chopping Board",
         "amount": 10
     },
     {
@@ -32,6 +35,7 @@
         "name": "Bowl",
         "image":"bowl.jpeg", 
         "price": 14.00,
+        "description": "Gold Bowl",
         "amount": 30
     },
     {
@@ -39,6 +43,7 @@
         "name": "Wooden Spoon",
         "image":"wooden-spoon.jpeg", 
         "price": 30.00,
+        "description": "Gold Wooden Spoon",
         "amount": 5
     }
 

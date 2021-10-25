@@ -12,8 +12,6 @@ export const createItem = /* GraphQL */ `
       description
       image
       price
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -28,8 +26,6 @@ export const updateItem = /* GraphQL */ `
       description
       image
       price
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -44,8 +40,6 @@ export const deleteItem = /* GraphQL */ `
       description
       image
       price
-      createdAt
-      updatedAt
     }
   }
 `;

@@ -9,8 +9,6 @@ export const getItem = /* GraphQL */ `
       description
       image
       price
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -27,8 +25,6 @@ export const listItems = /* GraphQL */ `
         description
         image
         price
-        createdAt
-        updatedAt
       }
       nextToken
     }

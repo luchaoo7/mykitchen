@@ -12,7 +12,7 @@ const Item = (props) => {
         <div className="panel panel-primary">
             <div className="panel-heading">{name}</div>
             <div className="panel-body">
-                <img src="https://placehold.it/150x80?text=IMAGE" className="img-responsive" style={style}  alt="dull"/>
+                <img src="https://placehold.it/150x80?text=IMAGE" className="img-responsive" style={style}  alt=""/>
             </div>
             <div className="panel-footer">Price: ${price}
             </div>
