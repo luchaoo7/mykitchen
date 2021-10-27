@@ -11,7 +11,8 @@ import { Route, Switch} from 'react-router-dom';
 import Success from "./Success";
 import Fail from "./Fail";
 
-import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react'
+import { withAuthenticator } from '@aws-amplify/ui-react'
+//import { AmplifySignOut } from '@aws-amplify/ui-react'
 
 import { API } from 'aws-amplify';
 import { listItems } from '../graphql/queries'
@@ -38,34 +39,29 @@ const KitchenContainer = (props) => {
             <Route exact path="/">
                 <MyJumbotron />
                 <NavBar/>
-                <AmplifySignOut />
                 <ItemList products={items}/>
                 <MyFooter />
             </Route>
             <Route exact path="/details">
                 <MyJumbotron />
                 <NavBar/>
-                <AmplifySignOut />
                 <ItemDetail />
                 <MyFooter />
             </Route>
             <Route exact path="/cart">
                 <MyJumbotron />
                 <NavBar/>
-                <AmplifySignOut />
                 <Cart />
                 <MyFooter />
             </Route>
             <Route exact path="/success">
                 <MyJumbotron />
                 <NavBar/>
-                <AmplifySignOut />
                 <Success/>
             </Route>
             <Route exact path="/failed">
                 <MyJumbotron />
                 <NavBar/>
-                <AmplifySignOut />
                 <Fail/>
             </Route>
         </Switch>
