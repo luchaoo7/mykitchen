@@ -14,6 +14,12 @@
     "categories": {
       "auth": {
         "mykitchenca2bcfaf": {}
+      },
+      "function": {
+        "checkoutSession": {
+          "deploymentBucketName": "amplify-amplify6fc8396fef8e4-staging-02904-deployment",
+          "s3Key": "amplify-builds/checkoutSession-42795132566873524d55-build.zip"
+        }
       }
     }
   }
