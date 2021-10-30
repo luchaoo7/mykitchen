@@ -16,11 +16,15 @@ import { withAuthenticator } from '@aws-amplify/ui-react'
 
 import { API } from 'aws-amplify';
 import { listItems } from '../graphql/queries'
+
+import axios from 'axios';
+
 //import { createItem as createItemMutation, deleteItem as deleteItemMutation } from '../graphql/mutations';
 
 const KitchenContainer = (props) => {
 
     const [items, setItems] = useState([]);
+    const [name, setName] = useState("");
 
     useEffect(() => {
         fetchItems();
@@ -29,6 +33,18 @@ const KitchenContainer = (props) => {
     async function fetchItems() {
         const apiData = await API.graphql({ query: listItems });
         console.log(apiData.data.listItems.items);
+
+        try {
+            const response = await axios.get("https://a2lz8qzjc2.execute-api.eu-west-1.amazonaws.com/default/checkoutSession-staging");
+            console.log(`Axios Response is: ${response}`);
+            setName(response);
+        } catch (error) {
+            console.log(error);
+            console.log("Error, axios failed");
+        }
+
+
+        console.log(JSON.stringify(apiData.data.listItems.items))
         setItems(apiData.data.listItems.items);
     }
 
