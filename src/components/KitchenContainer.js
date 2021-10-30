@@ -87,4 +87,4 @@ const KitchenContainer = (props) => {
 
 //export default KitchenContainer;
 //export default KitchenContainer
-export default withAuthenticator(KitchenContainer)
+export default KitchenContainer;
