@@ -38,9 +38,8 @@ const ItemDetail = (props) => {
                 <div class="col-md-3">
                     <h3 class="my-3">Mobile Description</h3>
                     <p>
-                         random text
                          {
-                             JSON.stringify(product)
+                             product.description
                          }
                     </p>
                     <h3 class="my-3">Project Details</h3>
