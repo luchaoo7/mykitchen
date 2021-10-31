@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect} from "react";
 //import MyCarousel from '../components/Carousel';
 import NavBar from './NavBar'
 import MyJumbotron from './Jumbotron';
