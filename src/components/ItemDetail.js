@@ -16,11 +16,8 @@ const ItemDetail = (props) => {
     let { slug } = useParams();
     let item = {};
 
-    item = JSON.parse(localStorage.getItem(slug));
 
     useEffect(() => {
-        item = JSON.parse(localStorage.getItem("pablo"));
-        console.log(item.name);
     }, []);
     
 
@@ -30,9 +27,6 @@ const ItemDetail = (props) => {
             <div className="row">    
                 <div className="col-sm-7">
                     <img src="https://via.placeholder.com/750x500" className="img-responsive" style={style} alt=""/>
-                    {
-                        slug
-                    }
                 </div>
         
                 <div class="col-md-3">
