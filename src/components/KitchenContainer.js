@@ -58,7 +58,7 @@ const KitchenContainer = (props) => {
                 <ItemList products={items}/>
                 <MyFooter />
             </Route>
-            <Route exact path="/details">
+            <Route exact path="/details/:slug">
                 <MyJumbotron />
                 <NavBar/>
                 <ItemDetail />
