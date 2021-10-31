@@ -29,7 +29,7 @@ const ItemDetail = (props) => {
         <div className="container">    
             <div className="row">    
                 <div className="col-sm-7">
-                    <img src={`${public_image}/images/${item.image}`} className="img-responsive" style={style}  alt=""/>
+                    <img src="https://via.placeholder.com/750x500" className="img-responsive" style={style} alt=""/>
                     {
                         slug
                     }
