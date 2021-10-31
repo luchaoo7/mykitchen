@@ -1,10 +1,12 @@
 import { JS } from '@aws-amplify/core';
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 //import XLSX from 'xlsx';
 //var FileSaver = require('file-saver');
 import { useParams } from "react-router-dom";
 
 const ItemDetail = (props) => {
+
+    const [product, setProduct] = useState({});
 
     const style = {
         width: "400px",
@@ -14,11 +16,15 @@ const ItemDetail = (props) => {
     const public_image = process.env.PUBLIC_URL;
 
     let { slug } = useParams();
-    let item = {};
+    console.log(slug)
 
 
     useEffect(() => {
-    }, []);
+        console.log("Hello World")
+        let item = JSON.parse(localStorage.getItem(slug))
+        setProduct(item);
+        console.log(slug)
+    },[setProduct]);
     
 
     return (
@@ -26,15 +32,16 @@ const ItemDetail = (props) => {
         <div className="container">    
             <div className="row">    
                 <div className="col-sm-7">
-                    <img src="https://via.placeholder.com/750x500" className="img-responsive" style={style} alt=""/>
+                    <img src={`${public_image}/images/${product.image}`} className="img-responsive" style={style}  alt=""/>
                 </div>
         
                 <div class="col-md-3">
                     <h3 class="my-3">Mobile Description</h3>
                     <p>
-                        {
-                            item.description
-                        }
+                         random text
+                         {
+                             JSON.stringify(product)
+                         }
                     </p>
                     <h3 class="my-3">Project Details</h3>
                     <ul>

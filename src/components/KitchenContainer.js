@@ -11,7 +11,7 @@ import { Route, Switch} from 'react-router-dom';
 import Success from "./Success";
 import Fail from "./Fail";
 
-import { withAuthenticator } from '@aws-amplify/ui-react'
+//import { withAuthenticator } from '@aws-amplify/ui-react'
 //import { AmplifySignOut } from '@aws-amplify/ui-react'
 
 import { API } from 'aws-amplify';
@@ -37,6 +37,7 @@ const KitchenContainer = (props) => {
         try {
             const response = await axios.get("https://a2lz8qzjc2.execute-api.eu-west-1.amazonaws.com/default/checkoutSession-staging");
             console.log(`Axios Response is: ${response}`);
+            console.log(name);
             setName(response);
         } catch (error) {
             console.log(error);
