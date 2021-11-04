@@ -7,6 +7,7 @@ import React from 'react';
 const NavBar = () => {
   
   const public_image = process.env.PUBLIC_URL;
+  const logo = 'logo.jpeg';
   
   const style = {
         width: "80px",
@@ -23,7 +24,7 @@ const NavBar = () => {
             <span className="icon-bar"></span>                        
           </button>
           <a className="navbar-brand" href="#top">
-            <img src={`${public_image}/images/logo.jpeg`} className="img-responsive" style={style}  alt=""/>
+            <img src={`${public_image}/images/${logo}`} className="img-responsive" style={style}  alt=""/>
           </a>
       </div>
       <div className="collapse navbar-collapse" id="myNavbar">
