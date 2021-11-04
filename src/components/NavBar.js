@@ -5,6 +5,13 @@ import React from 'react';
 //import Container from 'react-bootstrap/Container';
 
 const NavBar = () => {
+  
+  const public_image = process.env.PUBLIC_URL;
+  
+  const style = {
+        width: "80px",
+        height: "34px",
+    }
 
     return (
     <nav className="navbar navbar-inverse">
@@ -15,7 +22,9 @@ const NavBar = () => {
             <span className="icon-bar"></span>
             <span className="icon-bar"></span>                        
           </button>
-          <a className="navbar-brand" href="#top">Logo</a>
+          <a className="navbar-brand" href="#top">
+            <img src={`${public_image}/images/logo.jpeg`} className="img-responsive" style={style}  alt=""/>
+          </a>
       </div>
       <div className="collapse navbar-collapse" id="myNavbar">
         <ul className="nav navbar-nav">
