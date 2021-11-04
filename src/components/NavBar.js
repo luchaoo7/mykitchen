@@ -7,7 +7,7 @@ import React from 'react';
 const NavBar = () => {
   
   const public_image = process.env.PUBLIC_URL;
-  const logo = 'logo.jpeg';
+  const logo = 'logo.jpg';
   
   const style = {
         width: "80px",
