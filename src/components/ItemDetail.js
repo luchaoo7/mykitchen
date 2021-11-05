@@ -42,13 +42,6 @@ const ItemDetail = (props) => {
                              product.description
                          }
                     </p>
-                    <h3 class="my-3">Project Details</h3>
-                    <ul>
-                        <li>Lorem Ipsum</li>
-                        <li>Dolor Sit Amet</li>
-                        <li>Consectetur</li>
-                        <li>Adipiscing Elit</li>
-                    </ul>
                 </div>
         
                 <div className="col-sm-2 pull-right">
