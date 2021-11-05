@@ -31,7 +31,7 @@ const NavBar = () => {
         <ul className="nav navbar-nav">
           <li className="active"><a href="#top">Home</a></li>
           <li><a href="/">Products</a></li>
-          <li><a href="#top">Contact</a></li>
+          <li><a href="/contact">Contact</a></li>
         </ul>
         <ul className="nav navbar-nav navbar-right">
           <li><a href="#top"><span className="glyphicon glyphicon-user"></span> Your Account</a></li>

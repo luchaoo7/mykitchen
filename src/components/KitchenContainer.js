@@ -10,6 +10,7 @@ import Cart from "./Cart";
 import { Route, Switch} from 'react-router-dom';
 import Success from "./Success";
 import Fail from "./Fail";
+import Contact from "./Contact";
 
 //import { withAuthenticator } from '@aws-amplify/ui-react'
 //import { AmplifySignOut } from '@aws-amplify/ui-react'
@@ -63,6 +64,12 @@ const KitchenContainer = (props) => {
                 <MyJumbotron />
                 <NavBar/>
                 <ItemDetail />
+                <MyFooter />
+            </Route>
+            <Route exact path="/contact">
+                <MyJumbotron />
+                <NavBar/>
+                <Contact />
                 <MyFooter />
             </Route>
             <Route exact path="/cart">
