@@ -70,7 +70,6 @@ const KitchenContainer = (props) => {
                 <MyJumbotron />
                 <NavBar/>
                 <Contact />
-                <MyFooter />
             </Route>
             <Route exact path="/cart">
                 <MyJumbotron />
