@@ -23,13 +23,13 @@ const NavBar = () => {
             <span className="icon-bar"></span>
             <span className="icon-bar"></span>                        
           </button>
-          <a className="navbar-brand" href="#top">
+          <a className="navbar-brand" href="/">
             <img src={`${public_image}/images/${logo}`} className="img-responsive" style={style}  alt=""/>
           </a>
       </div>
       <div className="collapse navbar-collapse" id="myNavbar">
         <ul className="nav navbar-nav">
-          <li className="active"><a href="#top">Home</a></li>
+          <li className="active"><a href="/">Home</a></li>
           <li><a href="/">Products</a></li>
           <li><a href="/contact">Contact</a></li>
         </ul>
