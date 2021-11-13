@@ -8,7 +8,7 @@ const ItemList = (props) => {
             <div className="row">    
             {
                 props.products.map((product) => {
-                    return <Item key={product.id} product={product}/>
+                    return <Item key={product.id} product={product} setCart={props.setCart}/>
                 })
             }
             </div>

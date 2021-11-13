@@ -4,7 +4,7 @@ import React from 'react';
 //import NavDropdown from 'react-bootstrap/NavDropdown';
 //import Container from 'react-bootstrap/Container';
 
-const NavBar = () => {
+const NavBar = (props) => {
   
   const public_image = process.env.PUBLIC_URL;
   const logo = 'logo.jpg';
@@ -35,7 +35,7 @@ const NavBar = () => {
         </ul>
         <ul className="nav navbar-nav navbar-right">
           <li><a href="#top"><span className="glyphicon glyphicon-user"></span> Your Account</a></li>
-          <li><a href="/cart"><span className="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+          <li><a href="/cart"><span className="glyphicon glyphicon-shopping-cart"></span> Cart {props.amount}</a></li>
         </ul>
       </div>
     </div>

@@ -26,10 +26,19 @@ const KitchenContainer = (props) => {
 
     const [items, setItems] = useState([]);
     const [name, setName] = useState("");
+    const [cart, setCart] = useState([]);
 
     useEffect(() => {
         fetchItems();
-    }, []);
+
+        let myCart = localStorage.getItem("cart");
+        if(myCart){
+            setCart(JSON.parse(myCart));
+            localStorage.setItem("cart", myCart);
+        } else {
+            localStorage.setItem("cart", cart);
+        }
+    }, [setCart]);
 
     async function fetchItems() {
         const apiData = await API.graphql({ query: listItems });
@@ -56,35 +65,35 @@ const KitchenContainer = (props) => {
         <Switch>
             <Route exact path="/">
                 <MyJumbotron />
-                <NavBar/>
-                <ItemList products={items}/>
+                <NavBar amount={cart.length ? `:${cart.length}`: ""}/>
+                <ItemList products={items} setCart={setCart}/>
                 <MyFooter />
             </Route>
             <Route exact path="/details/:slug">
                 <MyJumbotron />
-                <NavBar/>
+                <NavBar amount={cart.length ? `:${cart.length}`: ""}/>
                 <ItemDetail />
                 <MyFooter />
             </Route>
             <Route exact path="/contact">
                 <MyJumbotron />
-                <NavBar/>
+                <NavBar amount={cart.length ? `:${cart.length}`: ""}/>
                 <Contact />
             </Route>
             <Route exact path="/cart">
                 <MyJumbotron />
-                <NavBar/>
-                <Cart />
+                <NavBar amount={cart.length ? `:${cart.length}`: ""}/>
+                <Cart cart={cart}/>
                 <MyFooter />
             </Route>
             <Route exact path="/success">
                 <MyJumbotron />
-                <NavBar/>
+                <NavBar amount={cart.length ? `:${cart.length}`: ""}/>
                 <Success/>
             </Route>
             <Route exact path="/failed">
                 <MyJumbotron />
-                <NavBar/>
+                <NavBar amount={cart.length ? `:${cart.length}`: ""}/>
                 <Fail/>
             </Route>
         </Switch>

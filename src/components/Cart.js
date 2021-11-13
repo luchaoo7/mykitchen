@@ -1,6 +1,20 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 
-const Cart = () => {
+const Cart = (props) => {
+
+    const [cart, setCart] = useState([]);
+
+    useEffect(() => {
+      setCart(props.cart)
+    }, [setCart, cart])
+
+    const style = {
+        width: "80px",
+        height: "150px",
+    }
+
+
+
 
 
 	return (
@@ -23,23 +37,29 @@ const Cart = () => {
                 </thead>
                 <tbody>
         
-                  <tr>
-                    <td className="p-4">
-                      <div className="media align-items-center">
-                        <img src="https://bootdey.com/img/Content/avatar/avatar2.png" className="d-block ui-w-40 ui-bordered mr-4" alt="" />
-                        <div className="media-body">
-                          <a href="#top" className="d-block text-dark">Product 3</a>
-                          <small>
-                            <span className="text-muted">Ships from: </span> Germany
-                          </small>
-                        </div>
-                      </div>
-                    </td>
-                    <td className="text-right font-weight-semibold align-middle p-4">$20.55</td>
-                    <td className="align-middle p-4"><input type="text" className="form-control text-center" value="1" /></td>
-                    <td className="text-right font-weight-semibold align-middle p-4">$20.55</td>
-                    <td className="text-center align-middle px-0"><a href="#top" className="shop-tooltip close float-none text-danger" title="" data-original-title="Remove">×</a></td>
-                  </tr>
+                    {
+                      cart.map((item) => {
+                        return  ( 
+                        <tr>
+                          <td className="p-4">
+                            <div className="media align-items-center">
+                            <img src={item.image} className="img-responsive" style={style}  alt=""/>
+                              <div className="media-body">
+                                <small>
+                                  <span className="text-muted">Ships from: </span> UK
+                                </small>
+                              </div>
+                            </div>
+                          </td>
+                          <td className="text-right font-weight-semibold align-middle p-4">${item.price}</td>
+                          <td className="align-middle p-4"><input type="text" className="form-control text-center" value="1" /></td>
+                          <td className="text-right font-weight-semibold align-middle p-4">$20.55</td>
+                          <td className="text-center align-middle px-0"><a href="#top" className="shop-tooltip close float-none text-danger" title="" data-original-title="Remove">×</a></td>
+                        </tr>
+
+                        )
+                      })
+                    }
         
                 </tbody>
               </table>
@@ -49,7 +69,15 @@ const Cart = () => {
               <div className="d-flex">
                 <div className="text-right mt-4">
                   <label className="text-muted font-weight-normal m-0">Total price</label>
-                  <div className="text-large"><strong>$1164.65</strong></div>
+                  <div className="text-large">
+                    <strong>£
+                      {
+                        cart.reduce((prev, current) => {
+                          return prev + current.price;
+                        }, 0)
+                      }
+                    </strong>
+                  </div>
                 </div>
               </div>
             </div>
