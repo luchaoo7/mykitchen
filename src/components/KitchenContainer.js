@@ -12,6 +12,9 @@ import Success from "./Success";
 import Fail from "./Fail";
 import Contact from "./Contact";
 
+import { Widget, addResponseMessage } from "react-chat-widget";
+import 'react-chat-widget/lib/styles.css';
+
 //import { withAuthenticator } from '@aws-amplify/ui-react'
 //import { AmplifySignOut } from '@aws-amplify/ui-react'
 
@@ -39,6 +42,10 @@ const KitchenContainer = (props) => {
             localStorage.setItem("cart", cart);
         }
     }, [setCart]);
+    
+    useEffect(() => {
+        addResponseMessage('Welcome to this awesome chat!');
+    }, []);
 
     async function fetchItems() {
         const apiData = await API.graphql({ query: listItems });
@@ -58,6 +65,12 @@ const KitchenContainer = (props) => {
         console.log(JSON.stringify(apiData.data.listItems.items))
         setItems(apiData.data.listItems.items);
     }
+    
+    const handleNewUserMessage = (newMessage) => {
+        console.log(`New message incoming! ${newMessage}`);
+        // Now send the message throught the backend API
+        //addResponseMessage(newMessage, "marca");
+    };
 
 
     return (
@@ -66,6 +79,11 @@ const KitchenContainer = (props) => {
             <Route exact path="/">
                 <MyJumbotron />
                 <NavBar amount={cart.length ? `:${cart.length}`: ""}/>
+                <Widget 
+                    handleNewUserMessage={handleNewUserMessage}
+                    title="Help Line"
+                    subtitle="Recovery"
+                />
                 <ItemList products={items} setCart={setCart}/>
                 <MyFooter />
             </Route>
@@ -78,6 +96,11 @@ const KitchenContainer = (props) => {
             <Route exact path="/contact">
                 <MyJumbotron />
                 <NavBar amount={cart.length ? `:${cart.length}`: ""}/>
+                 <Widget 
+                    handleNewUserMessage={handleNewUserMessage}
+                    title="Help Line"
+                    subtitle="Recovery"
+                />
                 <Contact />
             </Route>
             <Route exact path="/cart">
