@@ -1,7 +1,0 @@
-type Item @model @auth (rules: [{ allow: public, operations: [read] }]){
-  id: ID!
-  name: String!
-  description: String
-  image: String
-  price: Float!
-}
