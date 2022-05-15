@@ -26,7 +26,7 @@ pipeline {
 
         stage('build') {
             steps {
-                sh 'npm run build'
+                sh 'CI=false npm run build'
 
             }
 
@@ -39,7 +39,7 @@ pipeline {
     post {
         always {
             echo 'This will always run'
-            deleteDir()
+            //deleteDir()
 
         }
         success {
