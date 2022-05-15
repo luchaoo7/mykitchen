@@ -1,5 +1,5 @@
 pipeline {
-    agent { docker { image 'node:16.13.1-alpine'  }  }
+    agent { any { image 'node:16.13.1-alpine'  }  }
 
     //options {
     //    // This is required if you want to clean before build
@@ -23,6 +23,15 @@ pipeline {
             }
 
         }
+
+        stage('build') {
+            steps {
+                sh 'npm run build'
+
+            }
+
+        }
+
 
 
     }
