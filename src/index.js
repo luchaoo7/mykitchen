@@ -4,6 +4,7 @@ import './index.css';
 import KitchenContainer from '../src/components/KitchenContainer';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
+import { Auth0Provider } from '@auth0/auth0-react';
 //import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Amplify from 'aws-amplify';
@@ -12,10 +13,16 @@ Amplify.configure(config);
 
 
 ReactDOM.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <KitchenContainer />
-    </BrowserRouter>
+  <React.StrictMode >
+    <Auth0Provider
+    domain="dabrown.eu.auth0.com"
+    clientId="BpcAIdD4eMl5U7gmLpEqRuEN6z03XaHC"
+    redirectUri={window.location.origin}
+    >
+      <BrowserRouter>
+        <KitchenContainer />
+      </BrowserRouter>
+    </Auth0Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -3,6 +3,8 @@ import React from 'react';
 //import Nav from 'react-bootstrap/Nav';
 //import NavDropdown from 'react-bootstrap/NavDropdown';
 //import Container from 'react-bootstrap/Container';
+import LoginButton from './LoginButton';
+import LogoutButton from './LogoutButton';
 
 const NavBar = (props) => {
   
@@ -36,6 +38,8 @@ const NavBar = (props) => {
         <ul className="nav navbar-nav navbar-right">
           <li><a href="#top"><span className="glyphicon glyphicon-user"></span> Your Account</a></li>
           <li><a href="/cart"><span className="glyphicon glyphicon-shopping-cart"></span> Cart {props.amount}</a></li>
+          <li> <LoginButton /> </li>
+          <li> <LogoutButton /> </li>
         </ul>
       </div>
     </div>
