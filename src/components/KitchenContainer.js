@@ -11,6 +11,7 @@ import { Route, Switch} from 'react-router-dom';
 import Success from "./Success";
 import Fail from "./Fail";
 import Contact from "./Contact";
+import MarkDownReader from "./MarkDownReader";
 
 import { Widget, addResponseMessage } from "react-chat-widget";
 import 'react-chat-widget/lib/styles.css';
@@ -32,6 +33,12 @@ const KitchenContainer = (props) => {
     const [cart, setCart] = useState([]);
 
     useEffect(() => {
+        console.log(`Node env is: ${process.env.NODE_ENV}`);
+        console.log(`Secret code is: ${process.env.REACT_APP_SECRET_CODE}`);
+        console.log(`Secret name is: ${process.env.REACT_APP_SECRET_NAME}`);
+        console.log(`Dev Secret is: ${process.env.REACT_APP_SECRET_DEV}`);
+        console.log(`Test Secret is: ${process.env.REACT_APP_SECRET_TEST}`);
+        console.log(`Prod Secret is: ${process.env.REACT_APP_SECRET_PROD}`);
         fetchItems();
 
         let myCart = localStorage.getItem("cart");
@@ -48,22 +55,36 @@ const KitchenContainer = (props) => {
     }, []);
 
     async function fetchItems() {
-        const apiData = await API.graphql({ query: listItems });
-        console.log(apiData.data.listItems.items);
+        //const apiData = await API.graphql({ query: listItems });
+        //console.log(apiData.data.listItems.items);
 
         try {
-            const response = await axios.get("https://a2lz8qzjc2.execute-api.eu-west-1.amazonaws.com/default/checkoutSession-staging");
-            console.log(`Axios Response is: ${response}`);
-            console.log(name);
-            setName(response);
+            
+            let headers = {
+                'Content-Type': 'application/json',
+              }
+         
+
+
+            let response = await axios.get("/cors", {headers: headers});
+            console.log(response)
+
+         
+            //const response = await axios.get(
+            //    "https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors/CORSDidNotSucceed",
+            //    {withCredentials: false, ...headers});
+
+            //console.log(`Axios Response is: ${response}`);
+            //console.log(name);
+            //setName(response);
         } catch (error) {
             console.log(error);
             console.log("Error, axios failed");
         }
 
 
-        console.log(JSON.stringify(apiData.data.listItems.items))
-        setItems(apiData.data.listItems.items);
+        //console.log(JSON.stringify(apiData.data.listItems.items))
+        //setItems(apiData.data.listItems.items);
     }
     
     const handleNewUserMessage = (newMessage) => {
@@ -79,6 +100,7 @@ const KitchenContainer = (props) => {
             <Route exact path="/">
                 <MyJumbotron />
                 <NavBar amount={cart.length ? `:${cart.length}`: ""}/>
+                <MarkDownReader />
                 <Widget 
                     handleNewUserMessage={handleNewUserMessage}
                     title="Help Line"
